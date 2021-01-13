@@ -14,7 +14,7 @@ In this step, we'll get the project set up.
 
 * Fork and clone this repo.
 * Run `npm install`. If you look at the package.json file, you'll notice that `redux`, `react-redux`, and `redux-promise-middleware` are listed as dependecies. These are installed when you run `npm install`.
-* Create a `.env` file in the root of the project with a `SERVER_PORT` of `4000` and a `SESSION_SECRET` of any value you want.
+* Create a `.env` file in the root of the project with a `SERVER_PORT` of `4000` and a `SESSION_SECRET` of any value you want.  
 * Run `nodemon`.
 * Run `npm start` in a separate terminal instance.
 

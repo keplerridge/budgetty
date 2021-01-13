@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import {connect} from 'react-redux';
+import {requestUserData} from './ducks/userReducer';
 import Background from './../shared/Background/Background'
 import Chart1 from './../shared/Chart1';
 import Chart2 from './../shared/Chart2';
@@ -10,11 +12,15 @@ import './Budget.css';
 
 
 class Budget extends Component {
+  componentDidMount(){
+    this.props.requestUserData();
+  }
 
   render() {
+    const {loading} = this.props.budget;
     return (
       <Background>
-        {true ? <Loading /> : null}
+        {loading ? <Loading /> : null}
         <div className='budget-container'>
           <Nav />
           <div className='content-container'>
@@ -33,4 +39,6 @@ class Budget extends Component {
   }
 }
 
-export default Budget;
+const mapStateToProps = state => ({budget: state.budget})
+
+export default connect(mapStateToProps ,{requestUserData})(Budget);
